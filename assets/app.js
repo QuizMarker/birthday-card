@@ -36,7 +36,7 @@ const updatePreviewer = () => {
   if ($('#previewer-image').attr('src') != imageData.image) {
     $('#previewer-image').attr("src", imageData.image);
   }
-  
+
   $('#previewer-canvas')
     .css("zoom", zoom)
     .attr("height", imageData.height)
@@ -54,8 +54,16 @@ const updatePreviewer = () => {
 
   if (nameValue) {
     const p = imageData.position
-    ctx.textAlign = "center"
-    ctx.font = "36px UTM Aristote"
+    ctx.textAlign = imageData.align
+    if (imageData.fontSize && imageData.fontName) {
+      ctx.font = `${imageData.fontSize}px ${imageData.fontName}`;
+    }
+    if (imageData.color) {
+      ctx.fillStyle = imageData.color;
+    }
+    if (imageData.rotate) {
+      ctx.rotate(imageData.rotate * Math.PI / 180);
+    }
     ctx.fillText(nameValue, p[0], p[1])
   }
 }
