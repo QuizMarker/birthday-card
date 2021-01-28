@@ -34,5 +34,17 @@ const IMAGES = [
     fontSize: 40,
     fontName: 'Arial',
     align: 'right'
+  },
+    {
+    name: 'Test 3',
+    image: 'template/test3.jpg',
+    width: 600,
+    height: 600,
+    position: [300, 300],
+    fontSize: 30,
+    color: '#FF0000',
+    rotate: -10,
+    fontName: 'Arial',
+    align: 'left'
   }
 ]
